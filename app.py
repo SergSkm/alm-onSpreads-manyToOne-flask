@@ -130,7 +130,7 @@ def get_ALM_forecasts_manyToOne():
         modelFitted1 = pickle.load( open("models/many-to-one/model1/" + model1 + "/" + \
                                      post_request_object['sector'] + "_" + tenor + ".pkl", "rb" )) 
 
-        rates_spread_delta_forecast.append(np.float(modelFitted1.predict(post_request_object['ftp_spread_delta'] + [mosprime])))
+        rates_spread_delta_forecast.append(np.float(modelFitted1.predict(post_request_object['ftp_spread_delta_shocked'] + [mosprime])))
 
         rates_spread_delta_forecast_base.append(np.float(modelFitted1.predict(post_request_object['ftp_spread_delta'] + [mosprime]))) 
 
